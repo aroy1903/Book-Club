@@ -8,17 +8,21 @@ export default function Book() {
   const { id } = useParams();
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
+  const [pending, setPending] = useState(false);
 
   useEffect(() => {
+    setPending(true);
     const unsub = db
       .collection('posts')
       .doc(id)
       .onSnapshot(
         (doc) => {
           setData(doc.data());
+          setPending(false);
         },
         (err) => {
           setError(err.message);
+          setPending(false);
         }
       );
 
@@ -29,6 +33,8 @@ export default function Book() {
       className="bookContainer"
       style={{ backgroundImage: `url(${bckGroundImg})` }}
     >
+      {error && <h2>{error}</h2>}
+      {pending && <h2>Loading...</h2>}
       {data && (
         <div className="inviBook">
           <h2>{data.title}</h2>
@@ -36,7 +42,7 @@ export default function Book() {
           <p>Review: {data.review}</p>
         </div>
       )}
-      <div>Comments:</div>
+      {data && <div className="comments">Comments:</div>}
     </div>
   );
 }
