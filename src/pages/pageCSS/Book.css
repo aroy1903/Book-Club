@@ -1,0 +1,14 @@
+.bookContainer {
+  flex-grow: 1;
+}
+.inviBook {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 600px;
+}
+.inviBook img {
+  height: 300px;
+  width: 300px;
+  align-self: center;
+}

@@ -1,0 +1,24 @@
+.homePage {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.mainCont {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 90px;
+  height: 500px;
+}
+.mainCont :where(h1, h3) {
+  margin: 0;
+}
+.mainCont h1 {
+  font-size: 4rem;
+}
+.mainCont h3 {
+  font-size: 1rem;
+}

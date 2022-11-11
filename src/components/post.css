@@ -1,0 +1,64 @@
+.postContainer {
+  height: 440px;
+  width: 430px;
+  background-color: #b8e8fc;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  margin-bottom: 15px;
+}
+.postContainer:first-of-type {
+  margin-top: 20px;
+}
+
+.postContainer img {
+  height: 280px;
+  width: 250px;
+  cursor: pointer;
+}
+.likesComments {
+  display: flex;
+  width: 100%;
+  margin-top: 10px;
+  justify-content: space-evenly;
+}
+.likes {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100px;
+}
+.arrows {
+  cursor: pointer;
+}
+.postContainer h4 {
+  margin-bottom: 10px;
+}
+.author {
+  margin-top: 9px;
+}
+.userDelete {
+  position: relative;
+  right: -180px;
+  bottom: 390px;
+  cursor: pointer;
+}
+.userpostContainer {
+  height: 440px;
+  width: 430px;
+  background-color: #b8e8fc;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  margin-bottom: 15px;
+}
+.userpostContainer img {
+  height: 280px;
+  width: 250px;
+  cursor: pointer;
+}
