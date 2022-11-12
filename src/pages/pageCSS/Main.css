@@ -12,6 +12,7 @@
   justify-content: center;
   margin-bottom: 90px;
   height: 500px;
+  width: 100%;
 }
 .mainCont :where(h1, h3) {
   margin: 0;
@@ -21,4 +22,14 @@
 }
 .mainCont h3 {
   font-size: 1rem;
+}
+#birdWatch {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#birdWatch :where(h1, h3) {
+  align-self: center;
 }

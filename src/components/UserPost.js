@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react';
 import { useAuthContext } from '../hooks/useAuthContext';
+import { useHistory } from 'react-router-dom';
 import useFirestore from '../hooks/useFirestore';
 
 export default function UserPost({ document }) {
   const { deleteDoc, response } = useFirestore('posts');
   const { user } = useAuthContext();
+  const history = useHistory();
   const { error, success } = response;
 
   const generatePostId = () => {
@@ -22,7 +24,13 @@ export default function UserPost({ document }) {
   return (
     <div className="userpostContainer">
       {document && <h4>{document.title}</h4>}
-      {document && <img src={document.imgSrc} alt="" />}
+      {document && (
+        <img
+          src={document.imgSrc}
+          onClick={() => history.push(`/book/${document.id}`)}
+          alt=""
+        />
+      )}
       <span className="author">By: {document && document.author}</span>
       <span
         className="material-symbols-outlined userDelete"

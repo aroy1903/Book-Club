@@ -22,7 +22,6 @@ const useLogin = () => {
       setPending(false);
     } catch (err) {
       if (!cancelled) {
-        console.log(typeof err.message);
         if (
           err.message ===
           'There is no user record corresponding to this identifier. The user may have been deleted.'

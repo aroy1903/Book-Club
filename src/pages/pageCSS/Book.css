@@ -1,14 +1,60 @@
 .bookContainer {
   flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .inviBook {
   display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  height: 600px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 .inviBook img {
   height: 300px;
   width: 300px;
   align-self: center;
+}
+.inviBook p {
+  width: 500px;
+  height: 200px;
+  text-align: left;
+  font-size: 1rem;
+}
+.inviContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin-top: 70px;
+  height: 750px;
+}
+.revInfo {
+  display: flex;
+  justify-content: space-evenly;
+}
+.comments {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  bottom: 0;
+  margin-bottom: 25px;
+}
+.comments textarea {
+  resize: none;
+}
+.comments h4 {
+  margin-right: 270px;
+}
+.comments button {
+  margin-top: 5px;
+  margin-right: 270px;
+}
+h4 {
+  margin: 0;
+}
+h3 {
+  margin: 0;
 }

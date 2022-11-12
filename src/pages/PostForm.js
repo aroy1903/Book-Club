@@ -18,7 +18,6 @@ export default function PostForm() {
   const getBookCover = async (author, title) => {
     const urlAuthor = author.split(' ').join('+');
     const urlTitle = title.split(' ').join('+');
-    console.log(urlTitle, urlAuthor);
     const response = await axios.get(
       `https://www.googleapis.com/books/v1/volumes?q=${urlTitle}&inauthor:${urlAuthor}`
     );

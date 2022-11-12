@@ -23,7 +23,9 @@ export default function Navbar() {
             <li>{!user && <Link to="/signup">Sign Up</Link>}</li>
             {user && (
               <li>
-                <p className="userWelcome">Welcome , {user.displayName}!</p>
+                <p className="userWelcome">
+                  Welcome , {user.displayName && user.displayName}!
+                </p>
               </li>
             )}
             {user && (

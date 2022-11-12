@@ -3,6 +3,7 @@ import './post.css';
 import { useHistory } from 'react-router-dom';
 import useFirestore from '../hooks/useFirestore';
 import { useAuthContext } from '../hooks/useAuthContext';
+import useCollection from '../hooks/useCollection';
 
 export default function Post({ document }) {
   const { user } = useAuthContext();
@@ -13,14 +14,21 @@ export default function Post({ document }) {
     return userId.substring(20) + docId.substring(15);
   });
   const history = useHistory();
-  const initialClick =
-    JSON.parse(window.localStorage.getItem(generatePostId() + 1)) || false;
-  const initialDownvote =
-    JSON.parse(window.localStorage.getItem(generatePostId() + 2)) || false;
+  const initialClick = JSON.parse(
+    window.localStorage.getItem(generatePostId() + 1)
+  );
+  const initialDownvote = JSON.parse(
+    window.localStorage.getItem(generatePostId() + 2)
+  );
   const [upvotes, setUpvotes] = useState(0);
   const [click, setClickState] = useState(initialClick);
   const [downVoteState, setDownvote] = useState(initialDownvote);
   const { updateDoc, response } = useFirestore('posts');
+  const {
+    documents: commentDoc,
+    error: collError,
+    pending,
+  } = useCollection('comments', ['docId', '==', document.id]);
   const downarr = useRef();
   const uparr = useRef();
   const { error } = response;
@@ -51,6 +59,7 @@ export default function Post({ document }) {
   return (
     <div className="postContainer">
       {error && <p>{error}</p>}
+      {collError && <p>{collError}</p>}
       {document && <h4>{document.title}</h4>}
       {document && (
         <img
@@ -85,7 +94,7 @@ export default function Post({ document }) {
             </span>
           </button>
         </div>
-        <span>Comments:</span>
+        <span>Comments: {commentDoc && commentDoc.length}</span>
       </div>
     </div>
   );
