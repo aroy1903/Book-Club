@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import useLogin from '../hooks/useLogin';
 import './pageCSS/Login.css';
+import bckGroundImg from '../assets/chill.png';
 
 export default function Login() {
   const [email, setEmail] = useState('');
@@ -24,7 +25,7 @@ export default function Login() {
   };
 
   return (
-    <div className="main">
+    <div className="main" style={{ backgroundImage: `url(${bckGroundImg})` }}>
       <div className="formContainer">
         <h2>Login</h2>
         <form action="">

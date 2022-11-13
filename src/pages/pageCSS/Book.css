@@ -9,6 +9,8 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  height: 700px;
+  margin-bottom: 20px;
 }
 .inviBook img {
   height: 300px;

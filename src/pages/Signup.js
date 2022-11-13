@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './pageCSS/Signup.css';
 import useSignup from '../hooks/useSignup';
+import bckGroundImg from '../assets/chill.png';
 
 export default function Signup() {
   const [email, setEmail] = useState('');
@@ -20,7 +21,7 @@ export default function Signup() {
     signup(email, password, displayName);
   };
   return (
-    <div className="signup">
+    <div className="signup" style={{ backgroundImage: `url(${bckGroundImg})` }}>
       <div className="signupContainer">
         <h2>Signup</h2>
         <form>

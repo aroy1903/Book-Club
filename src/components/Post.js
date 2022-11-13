@@ -77,9 +77,7 @@ export default function Post({ document }) {
             onClick={handleUp}
             disabled={click}
           >
-            <span className="arrows material-symbols-outlined">
-              arrow_upward
-            </span>
+            <span class="material-symbols-outlined">thumb_up</span>
           </button>
 
           <span>{document && document.likes}</span>
@@ -89,9 +87,7 @@ export default function Post({ document }) {
             onClick={handleDown}
             disabled={downVoteState}
           >
-            <span className="arrows material-symbols-outlined">
-              arrow_downward
-            </span>
+            <span class="material-symbols-outlined">thumb_down</span>
           </button>
         </div>
         <span>Comments: {commentDoc && commentDoc.length}</span>
